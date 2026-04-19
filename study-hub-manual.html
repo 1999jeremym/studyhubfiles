@@ -9,142 +9,106 @@
     --bg: #faf8f5;
     --text: #1e293b;
     --muted: #64748b;
-    --accent: #10b981;
-    --accent-soft: #ecfdf5;
+    --accent: #2563eb;
     --border: #e2e8f0;
-    --surface: #ffffff;
+    --card: #ffffff;
+    --callout-bg: #eff6ff;
+    --callout-border: #3b82f6;
+    --warn-bg: #fffbeb;
+    --warn-border: #f59e0b;
   }
   * { box-sizing: border-box; }
   body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.7;
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
     padding: 40px 24px 80px;
-    font-size: 17px;
-  }
-  h1 {
-    font-size: 34px;
-    margin: 0 0 4px;
-    letter-spacing: -0.02em;
-  }
-  .subtitle {
-    color: var(--muted);
+    line-height: 1.65;
     font-size: 16px;
-    margin-bottom: 48px;
   }
-  h2 {
-    font-size: 22px;
-    margin: 48px 0 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--border);
-    letter-spacing: -0.01em;
-  }
-  h3 {
-    font-size: 17px;
-    margin: 28px 0 8px;
-    color: var(--text);
-  }
+  h1 { font-size: 32px; margin: 0 0 4px; letter-spacing: -0.5px; }
+  h1 + p { color: var(--muted); margin: 0 0 32px; font-size: 16px; }
+  h2 { font-size: 22px; margin: 40px 0 14px; padding-top: 16px; border-top: 1px solid var(--border); }
+  h3 { font-size: 17px; margin: 24px 0 8px; }
   p { margin: 0 0 14px; }
-  ul { padding-left: 22px; margin: 8px 0 16px; }
-  li { margin-bottom: 8px; }
-  .callout {
-    background: var(--accent-soft);
-    border-left: 4px solid var(--accent);
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
     padding: 16px 20px;
-    border-radius: 4px;
-    margin: 18px 0;
+    margin-bottom: 36px;
   }
-  .callout strong { color: #065f46; }
-  .tip {
-    background: #fef3c7;
-    border-left: 4px solid #f59e0b;
-    padding: 14px 20px;
-    border-radius: 4px;
-    margin: 18px 0;
+  .toc h3 { margin: 0 0 10px; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .toc ul { margin: 0; padding-left: 18px; }
+  .toc li { margin-bottom: 4px; font-size: 15px; }
+  .callout {
+    background: var(--callout-bg);
+    border-left: 3px solid var(--callout-border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 14px 0;
     font-size: 15px;
   }
+  .callout strong { color: var(--callout-border); }
   .warn {
-    background: #fee2e2;
-    border-left: 4px solid #dc2626;
-    padding: 14px 20px;
-    border-radius: 4px;
-    margin: 18px 0;
+    background: var(--warn-bg);
+    border-left: 3px solid var(--warn-border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 14px 0;
     font-size: 15px;
   }
+  .warn strong { color: #b45309; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 15px;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { background: #f1f5f9; font-weight: 600; }
   code {
     background: #f1f5f9;
-    padding: 2px 7px;
+    padding: 1px 5px;
     border-radius: 4px;
-    font-size: 14px;
-    font-family: 'SF Mono', Menlo, monospace;
-    color: #0f172a;
-  }
-  ol { padding-left: 22px; margin: 8px 0 16px; }
-  ol li { margin-bottom: 10px; }
-  .emoji { font-size: 20px; margin-right: 4px; }
-  .toc {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 18px 24px;
-    margin-bottom: 40px;
-  }
-  .toc h3 { margin-top: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; }
-  .toc ul { list-style: none; padding-left: 0; margin: 0; }
-  .toc li { margin-bottom: 4px; }
-  .toc a { color: var(--text); text-decoration: none; font-size: 15px; }
-  .toc a:hover { color: var(--accent); }
-  .footer {
-    margin-top: 80px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 14px;
-    text-align: center;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0a0b12;
-      --text: #e4e4e7;
-      --muted: #94a3b8;
-      --accent-soft: #0a2a15;
-      --border: #1e2030;
-      --surface: #12141e;
-    }
-    code { background: #1e2030; color: #e4e4e7; }
-    .tip { background: #2a2210; border-left-color: #f59e0b; }
-    .warn { background: #2a1015; border-left-color: #dc2626; }
-    .callout strong { color: #6ee7b7; }
+    font-family: ui-monospace, monospace;
+    font-size: 0.9em;
   }
 </style>
 </head>
 <body>
 
 <h1>Study Hub</h1>
-<p class="subtitle">A simple guide to what it is and how to use it</p>
+<p>A simple guide to what it is and how to use it</p>
 
 <div class="toc">
-  <h3>What's in this guide</h3>
-  <ul>
-    <li><a href="#what">1. What is the Study Hub?</a></li>
-    <li><a href="#open">2. Opening it for the first time</a></li>
-    <li><a href="#parts">3. The main parts of the hub</a></li>
-    <li><a href="#classes">4. Switching between classes</a></li>
-    <li><a href="#topics">5. Opening a topic</a></li>
-    <li><a href="#modes">6. The study modes explained</a></li>
-    <li><a href="#mastery">7. Mastery levels (L1 to L5)</a></li>
-    <li><a href="#adding">8. Adding your own content</a></li>
-    <li><a href="#faq">9. Common questions</a></li>
-  </ul>
+<h3>What's in this guide</h3>
+<ul>
+  <li><a href="#what">1. What is the Study Hub?</a></li>
+  <li><a href="#open">2. Opening it for the first time</a></li>
+  <li><a href="#parts">3. The main parts of the hub</a></li>
+  <li><a href="#classes">4. Switching between classes</a></li>
+  <li><a href="#topics">5. Opening a topic</a></li>
+  <li><a href="#modes">6. The study modes explained</a></li>
+  <li><a href="#mastery">7. Mastery levels (L1 to L5)</a></li>
+  <li><a href="#adding">8. Adding your own content</a></li>
+  <li><a href="#storage">9. How much can the hub hold?</a></li>
+  <li><a href="#faq">10. Common questions</a></li>
+</ul>
 </div>
 
 <h2 id="what">1. What is the Study Hub?</h2>
-
 <p>The Study Hub is a website that helps you learn the stuff you need to know for your class. Think of it like a digital study folder that's smarter than a normal folder.</p>
-
 <p>It holds your:</p>
 <ul>
   <li>Study notes</li>
@@ -154,27 +118,16 @@
   <li>Audio recordings</li>
   <li>Videos</li>
 </ul>
-
 <p>All in one place. For every topic in your class.</p>
-
-<div class="callout">
-  <strong>The big idea:</strong> instead of bouncing between ten different apps, you open one website and everything you need to study is right there.
-</div>
+<p><strong>The big idea:</strong> instead of bouncing between ten different apps, you open one website and everything you need to study is right there.</p>
 
 <h2 id="open">2. Opening it for the first time</h2>
-
 <p>You click the link your classmate sent you. The first time, Claude will ask you to sign in or make a free account — this is because the hub runs on Claude's website. It takes about a minute. Once you're in, you won't have to do it again.</p>
-
 <p>After that, the hub loads and you're ready to go. You don't need to install anything.</p>
-
 <p>The first thing you'll see is the <strong>Dashboard</strong>. That's the main home page.</p>
-
-<div class="tip">
-  <strong>Tip:</strong> bookmark the hub link in your browser after you log in the first time. Much faster than hunting for the message where someone sent it.
-</div>
+<div class="callout"><strong>Tip:</strong> bookmark the hub link in your browser after you log in the first time. Much faster than hunting for the message where someone sent it.</div>
 
 <h2 id="parts">3. The main parts of the hub</h2>
-
 <h3>The Dashboard (home page)</h3>
 <p>When you open the hub, you see:</p>
 <ul>
@@ -184,25 +137,17 @@
   <li>A list of all your <strong>modules</strong> (chunks of the course, like "Test 1" or "Test 2")</li>
   <li>Inside each module, a list of <strong>topics</strong> (like "Cells" or "Microbiology")</li>
 </ul>
-
 <h3>Topics</h3>
-<p>A topic is the smallest unit. It's one subject area you're learning about. For example: "Blood & Haematology" is a topic. Everything about blood — notes, flashcards, questions — lives inside that topic.</p>
-
+<p>A topic is the smallest unit. It's one subject area you're learning about. For example: "Blood &amp; Haematology" is a topic. Everything about blood — notes, flashcards, questions — lives inside that topic.</p>
 <h3>Modules</h3>
 <p>A module is a group of topics that go together. Usually it's what you'll be tested on in one exam. For example, "Test 2" might have topics like Blood, Homeostasis, and Fluid Balance inside it.</p>
 
 <h2 id="classes">4. Switching between classes</h2>
-
 <p>At the top of the hub, you'll see the class name. If you're taking more than one class, click that name. A little box pops up showing all your classes — tap any of them to switch.</p>
-
-<div class="callout">
-  <strong>Important:</strong> each class has its own notes, flashcards, and progress. They don't mix. So when you switch from "Health Science 1" to "Foundations of Nursing", you're looking at completely separate content.
-</div>
+<p><strong>Important:</strong> each class has its own notes, flashcards, and progress. They don't mix. So when you switch from "Health Science 1" to "Foundations of Nursing", you're looking at completely separate content.</p>
 
 <h2 id="topics">5. Opening a topic</h2>
-
 <p>Click any topic in the list. You'll see tabs near the top:</p>
-
 <ul>
   <li><strong>Learn</strong> — the study notes / study guide</li>
   <li><strong>Slides</strong> — any lecture PDFs added for that topic</li>
@@ -215,34 +160,23 @@
   <li><strong>Assess</strong> — AI-powered mastery check (more on this below)</li>
   <li><strong>Edit</strong> — if you want to add your own stuff</li>
 </ul>
-
 <p>You don't have to use all of them. Click whichever fits what you want to do right now.</p>
 
 <h2 id="modes">6. The study modes explained</h2>
-
 <h3>Learn mode</h3>
 <p>Just reading notes. Open it, read through. The notes usually have headings, bullet points, and sometimes images.</p>
-
 <h3>Flashcards mode</h3>
 <p>A card shows you a question or term on the front. You try to remember the answer, then click or tap to flip the card and see if you got it right. After flipping, you tell the hub if you got it right or wrong. This helps it figure out which cards you need to see again soon.</p>
-
-<div class="callout">
-  <strong>Why this works:</strong> your brain learns better when it has to dig for the answer instead of just reading it. It feels harder, but it sticks.
-</div>
-
+<p><strong>Why this works:</strong> your brain learns better when it has to dig for the answer instead of just reading it. It feels harder, but it sticks.</p>
 <h3>Quiz mode</h3>
 <p>Multiple-choice questions. You pick an answer, you see if it was right or wrong, and there's usually an explanation. At the end, you get a score.</p>
-
 <h3>Tutor mode</h3>
 <p>This is a chat window. You type a question ("can you explain how kidneys filter blood?") and the AI tutor explains it to you in plain language. You can keep asking follow-up questions like you would with a real tutor.</p>
-
 <h3>Assess mode</h3>
 <p>This is the most interesting one. Instead of a normal quiz, the AI asks you a question, you type your answer in your own words, and it tells you what level you're at (L1 to L5 — see the next section). It also tells you what you got right, what you missed, and what to study next. It's like having a teacher check your work.</p>
 
 <h2 id="mastery">7. Mastery levels (L1 to L5)</h2>
-
 <p>Every topic has a mastery level. This tells you how well you know it. There are five levels — you climb them in order.</p>
-
 <ul>
   <li><strong>L1 — Recall:</strong> can you name or define the thing? (Easiest)</li>
   <li><strong>L2 — Understand:</strong> can you explain the process step-by-step?</li>
@@ -250,19 +184,12 @@
   <li><strong>L4 — Apply:</strong> can you work out what happens when something goes wrong clinically?</li>
   <li><strong>L5 — Integrate:</strong> can you link it with other body systems and explain a full scenario? (Hardest)</li>
 </ul>
-
 <p>You don't have to reach L5 on everything. For exams, L3 or L4 on most topics is usually solid.</p>
-
-<div class="tip">
-  <strong>Tip:</strong> use Assess mode on a topic you think you know well. It's a good reality-check.
-</div>
+<div class="callout"><strong>Tip:</strong> use Assess mode on a topic you think you know well. It's a good reality-check.</div>
 
 <h2 id="adding">8. Adding your own content</h2>
-
 <p>Most of the content in the hub was added by whoever set it up. But you can add your own stuff to any topic — your notes stay private to you, they don't overwrite what anyone else sees.</p>
-
 <p>To add your own:</p>
-
 <ol>
   <li>Open a topic</li>
   <li>Click the <strong>Edit</strong> tab</li>
@@ -271,17 +198,64 @@
   <li>Add quiz questions the same way</li>
   <li>Paste a link to a video, audio file, or PDF if you want</li>
 </ol>
-
 <p>Everything saves automatically. You don't have to click a save button every time.</p>
+<div class="callout"><strong>Heads up:</strong> audio, video, and PDF files can't play directly inside the hub if they're linked from Google Drive. Use a GitHub Pages link if you want them to work properly — ask the person who set up your hub if you're not sure how.</div>
 
-<div class="warn">
-  <strong>Heads up:</strong> audio, video, and PDF files can't play directly inside the hub if they're linked from Google Drive. Use a GitHub Pages link if you want them to work properly — ask the person who set up your hub if you're not sure how.
-</div>
+<h2 id="storage">9. How much can the hub hold?</h2>
+<p>The hub stores things in two completely separate buckets, and they have very different limits. Knowing which is which will save you a lot of frustration.</p>
 
-<h2 id="faq">9. Common questions</h2>
+<h3>The two buckets</h3>
+<ul>
+  <li><strong>Shared content</strong> — the notes, flashcards, and questions that the hub's owner published for everyone in the class. Everyone sees this.</li>
+  <li><strong>Personal content</strong> — anything you add yourself in Edit mode. Only you see this.</li>
+</ul>
+
+<h3>The short answer</h3>
+<table>
+  <thead>
+    <tr><th>Bucket</th><th>Per topic</th><th>Per class (all topics combined)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Shared content</strong><br>(published by the owner)</td>
+      <td>No fixed ceiling. Text-heavy topics can be huge; PDF-heavy topics should stay under about 4 MB each.</td>
+      <td>Effectively unlimited — the hub automatically splits big classes across multiple storage slots as it grows.</td>
+    </tr>
+    <tr>
+      <td><strong>Personal content</strong><br>(your own edits)</td>
+      <td>No fixed per-topic limit.</td>
+      <td><strong>5 MB total, hard limit.</strong> All your personal notes, flashcards, chat history, and uploaded PDFs for one class share this single budget.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>What about modules?</h3>
+<p>Modules don't have their own storage — they're just visual groupings of topics on the dashboard. Storage is per-topic (for content) and per-class (for the overall budget). Having more modules costs you nothing.</p>
+
+<h3>The 5 MB personal limit — what fills it up</h3>
+<p>The thing most likely to eat your 5 MB personal budget is uploading PDFs via the "Upload PDF" button in Edit mode. A PDF you upload gets stored inside the hub (not linked), and the way it's stored actually takes up about 33% more space than the file's size on your computer. So a 3 MB PDF on disk becomes roughly 4 MB inside the hub.</p>
+<p>Typed notes and flashcards are tiny by comparison. You'd need to write hundreds of pages of notes before it noticeably adds up.</p>
+
+<div class="warn"><strong>Heads up — silent failure:</strong> if you go over the 5 MB personal limit, the hub doesn't show a warning. The new thing you just added will appear to be saved, but when you reload the page it won't be there. If you notice stuff disappearing after a reload, you're over the limit.</div>
+
+<h3>How to stay under the personal limit</h3>
+<ul>
+  <li><strong>Don't upload PDFs directly — link to them instead.</strong> Paste a Google Drive share link or a GitHub Pages link. Linked files don't count against your 5 MB because the hub just stores the link, not the file.</li>
+  <li><strong>Keep uploaded PDFs under about 3.5 MB each</strong> if you really do want them stored inside the hub.</li>
+  <li><strong>Don't upload the same PDF to multiple topics.</strong> Each copy eats the budget again.</li>
+  <li><strong>If you're running low, delete old AI chat histories</strong> from the Tutor tab. Long tutor conversations build up over time.</li>
+</ul>
+
+<h3>The shared content limit — why it's effectively unlimited</h3>
+<p>If you're the person who publishes content for the class, you don't really need to worry about a cap. When a class's shared content gets large, the hub automatically splits it across multiple storage slots behind the scenes. As far as you'll experience it: keep adding topics, keep publishing, it keeps working.</p>
+<p>The only practical thing to watch is load time — a class with hundreds of parts will take a moment longer to open than a small one. In practice this isn't a problem until you're well past any realistic one-year course.</p>
+
+<div class="callout"><strong>Rule of thumb:</strong> link big files, type the small stuff. If you do that, you'll never think about storage again.</div>
+
+<h2 id="faq">10. Common questions</h2>
 
 <h3>Will I lose my progress if I close the browser?</h3>
-<p>No. Everything saves automatically to your browser's storage. Open the hub again tomorrow and it'll all be there.</p>
+<p>No. Everything saves automatically. Open the hub again tomorrow and it'll all be there.</p>
 
 <h3>Can other people see my notes?</h3>
 <p>No. The notes you add in Edit mode are private to you. Other people have their own version of the hub with their own notes.</p>
@@ -292,6 +266,12 @@
 <h3>I deleted something and it came back. Why?</h3>
 <p>You probably tried to delete something that's part of the shared published content. Those have the 🔒 lock symbol — the way to remove them is to ask the hub's owner to update the published content for everyone.</p>
 
+<h3>I added a PDF and it disappeared after I reloaded. What happened?</h3>
+<p>Almost certainly you hit the 5 MB personal limit. Big uploaded PDFs are the usual culprit. Try linking to the PDF instead (paste a Google Drive or GitHub Pages link) rather than uploading the file itself — linked files don't count against your budget. See section 9 above.</p>
+
+<h3>How do I know if I'm running out of personal space?</h3>
+<p>There's no meter for personal storage (only for published content, which the owner sees). The telltale sign is stuff silently disappearing after a page reload. If that happens, clear out some old uploaded PDFs or chat history and re-add what you need as links instead.</p>
+
 <h3>What does the streak count mean?</h3>
 <p>It shows how many days in a row you've used the hub to study something. Keeping a streak going is a good nudge to study a little every day instead of cramming.</p>
 
@@ -301,9 +281,7 @@
 <h3>Is this better than just using my notebook?</h3>
 <p>For some things, yes: flashcards force you to recall stuff from memory, which makes it stick better than re-reading notes. The AI tutor can explain things in different ways until it clicks. For other things, a notebook is still fine. Use whichever is helping you actually learn.</p>
 
-<div class="footer">
-  The Study Hub works best when you use it <em>little and often</em>. Five minutes of flashcards every day beats two hours the night before the exam.
-</div>
+<p style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 15px;">The Study Hub works best when you use it <em>little and often</em>. Five minutes of flashcards every day beats two hours the night before the exam.</p>
 
 </body>
 </html>
